@@ -1,3 +1,13 @@
 body {
     background-color: gold;
 }
+
+.buttonClass {
+    background-color: cornflowerblue;
+    height: 100px;
+    weight: 100px;
+    font-family: "Times New Roman";
+    font-size: 50px;
+    border: 5px;
+}
+

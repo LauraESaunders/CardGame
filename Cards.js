@@ -7,7 +7,7 @@ function pageLoad() {
 }
 
 function playGame(shuffledDeck){
-    let player = winningPlayer(shuffledDeck);
+      let player = winningPlayer(shuffledDeck);
 }
 
 //Creates an array(deck) of objects(cards)
@@ -81,6 +81,7 @@ function winningPlayer(deck) {
         i = i + 2;  //increment in pairs
 
     }
+    if (playerOneDeck.length > 26 || playerTwoDeck.length > 26) console.log("-------------------------------------------GREATER THAN 26---------------------------------");
     console.log(playerOneDeck.length + " " + playerTwoDeck.length);
     console.log(playerOneDeck);
     console.log(playerTwoDeck);
@@ -95,13 +96,14 @@ function winningPlayer(deck) {
 }
 
 function showDeck(winner, deck) {
-    let deckHTML = '<table>'
+    debugger;
+    let deckHTML = '<table><tr>'
     let card = "";
     let image = "";
     let winnerHTML = `<hi>The Winner is ${winner}</h1>`;
     document.getElementById("winningPlayer").innerHTML= winnerHTML + " with ";
     document.getElementById("noOfCards").innerHTML=" " + deck.length + " cards ";
-    for (let i = 0; i < deck.length; i++) {
+    for (let i = deck.length-1; i >= 0; i--) {
         card = deck[i].Suit + deck[i].Value;      //Card suit and value
         image = "img/" + deck[i].Suit + deck[i].Value + ".jpg";  //image name is SuitValue.jpg
         deckHTML += `<td>${card}</td><td><img src=${image} width="40px" height="60px"></td>`;
