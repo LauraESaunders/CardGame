@@ -1,13 +1,13 @@
 function pageLoad() {
+    document.getElementById("buttonPlayGame").addEventListener("click", playGame);
+}
+
+function playGame(e){
     let colours = ['R', 'B', 'Y'];
     let values = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
     let deck = getDeck(colours, values);
-    let shuffledDeck = shuffle(deck);
-    document.getElementById("buttonPlayGame").addEventListener("click", playGame(shuffledDeck));
-}
-
-function playGame(shuffledDeck){
-      let player = winningPlayer(shuffledDeck);
+    shuffledDeck = shuffle(deck);
+    let player = winningPlayer(shuffledDeck);
 }
 
 //Creates an array(deck) of objects(cards)
@@ -96,7 +96,6 @@ function winningPlayer(deck) {
 }
 
 function showDeck(winner, deck) {
-    debugger;
     let deckHTML = '<table><tr>'
     let card = "";
     let image = "";
@@ -111,5 +110,4 @@ function showDeck(winner, deck) {
     deckHTML += '</tr></table>';
     document.getElementById("winner").innerHTML = deckHTML;
 }
-
 
